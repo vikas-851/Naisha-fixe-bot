@@ -1,34 +1,36 @@
-import os
-from typing import List
+from SafoneAPI import SafoneAPI
 
-import yaml
+from DAXXMUSIC.core.bot import DAXXMUSIC
+from DAXXMUSIC.core.dir import dirr
+from DAXXMUSIC.core.git import git
+from DAXXMUSIC.core.userbot import Userbot
+from DAXXMUSIC.misc import dbb, heroku
 
-languages = {}
-languages_present = {}
+from .logging import LOGGER
 
+EMOJIS = ["PPLAY_1", "PPLAY_2", "PPLAY_3", "PPLAY_4", "PPLAY_5",
+          "PPLAY_6", "PPLAY_7", "PPLAY_8", "PPLAY_9", "PPLAY_10",
+          "PPLAY_11", "PPLAY_12", "PPLAY_13", "PPLAY_14", "PPLAY_15",
+          "PPLAY_16", "PPLAY_17"]
 
-def get_string(lang: str):
-    return languages[lang]
+dirr()
+git()
+dbb()
+heroku()
 
+app = Champu()
+api = SafoneAPI()
+userbot = Userbot()
+HELPABLE = {}
 
-for filename in os.listdir(r"./strings/langs/"):
-    if "en" not in languages:
-        languages["en"] = yaml.safe_load(
-            open(r"./strings/langs/en.yml", encoding="utf8")
-        )
-        languages_present["en"] = languages["en"]["name"]
-    if filename.endswith(".yml"):
-        language_name = filename[:-4]
-        if language_name == "en":
-            continue
-        languages[language_name] = yaml.safe_load(
-            open(r"./strings/langs/" + filename, encoding="utf8")
-        )
-        for item in languages["en"]:
-            if item not in languages[language_name]:
-                languages[language_name][item] = languages["en"][item]
-    try:
-        languages_present[language_name] = languages[language_name]["name"]
-    except:
-        print("There is some issue with the language file inside bot.")
-        exit()
+from .platforms import *
+
+Apple = AppleAPI()
+Carbon = CarbonAPI()
+SoundCloud = SoundAPI()
+Spotify = SpotifyAPI()
+Resso = RessoAPI()
+Telegram = TeleAPI()
+YouTube = YouTubeAPI()
+YTB = YTM()
+APP = "\x54\x68\x65\x43\x68\x61\x6D\x70\x75\x42\x6F\x74"  # connect music api key "Dont change it"
