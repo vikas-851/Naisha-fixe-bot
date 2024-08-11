@@ -1,4 +1,4 @@
-from DAXXMUSIC.core.bot import BAD
+from DAXXMUSIC.core.bot import DAXX
 from DAXXMUSIC.core.dir import dirr
 from DAXXMUSIC.core.git import git
 from DAXXMUSIC.core.userbot import Userbot
@@ -12,7 +12,7 @@ git()
 dbb()
 heroku()
 
-app = BAD()
+app = DAXX()
 api = SafoneAPI()
 userbot = Userbot()
 
