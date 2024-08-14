@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 from DAXXMUSIC.utils.database import get_assistant
 import config
-from DAXXMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, YTB
+from DAXXMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from DAXXMUSIC.core.call import DAXX
 from DAXXMUSIC.misc import SUDOERS
 from DAXXMUSIC.utils import seconds_to_min, time_to_seconds
